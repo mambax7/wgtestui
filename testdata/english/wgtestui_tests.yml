@@ -24,7 +24,7 @@
     test_submitter: '1'
 -
     test_id: '3'
-    test_url: 'modules/wgtestui/admin/examples.php?op=warning'
+    test_url: 'modules/wgtestui/admin/examples.php?op=fatalerror'
     test_module: 'wgtestui'
     test_area: '1'
     test_type: '1'
@@ -36,7 +36,7 @@
     test_submitter: '1'
 -
     test_id: '4'
-    test_url: 'modules/wgtestui/admin/examples.php?op=error'
+    test_url: 'modules/wgtestui/admin/examples.php?op=errors'
     test_module: 'wgtestui'
     test_area: '1'
     test_type: '1'
