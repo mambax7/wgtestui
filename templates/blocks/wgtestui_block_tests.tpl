@@ -11,7 +11,7 @@
             type: "POST",
             data: {url: $url},
             success: function (response) {
-                alert('<{$smarty.const._MB_WGTESTUI_URL_ADDED}>');
+                alert(response.message);
             },
             error: function (response) {
                 alert('Error: ' + response.message);

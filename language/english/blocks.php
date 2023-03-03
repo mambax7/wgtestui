@@ -24,5 +24,4 @@ declare(strict_types=1);
  */
 // Admin Edit
 \define('_MB_WGTESTUI_ADD_URL', 'Add current url to test database');
-\define('_MB_WGTESTUI_URL_ADDED', 'Current url added to test database');
 // ---------------- End ----------------

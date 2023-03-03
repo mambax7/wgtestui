@@ -44,25 +44,36 @@ if (!is_object($testsObj)) {
     echo json_encode(['status'=>'error','message'=>'invalid object testsObj']);
 } else {
     $currentUrl = str_replace(XOOPS_URL . '/', '', $url);
-    $arrTemp = explode('/', $currentUrl);
-    $testModule = \count($arrTemp) > 0 ? $arrTemp[1] : 'xoopscore';
-    $testsObj->setVar('test_url', $currentUrl);
-    $testsObj->setVar('test_area', 2);
-    $testsObj->setVar('test_module', $testModule);
-    $testsObj->setVar('test_type', 1);
-    $testsObj->setVar('test_resultcode', '0');
-    $testsObj->setVar('test_resulttext', '');
-    $testsObj->setVar('test_infotext', '');
-    $testsObj->setVar('test_datetest', \time());
-    $testsObj->setVar('test_datecreated', \time());
-    $testsObj->setVar('test_submitter', $GLOBALS['xoopsUser']->uid());
-    // Insert Data
-    if ($testsHandler->insert($testsObj)) {
-        // redirect after insert
+    if ('' === $currentUrl) {
+        $currentUrl = 'index.php';
+    }
+    //check whether given url already exists in database
+    $crTests = new \CriteriaCompo();
+    $crTests->add(new Criteria('test_url', $currentUrl));
+    if ($testsHandler->getCount($crTests) > 0) {
         header('Content-Type: application/json');
-        echo json_encode(['status' => 'success', 'message' => 'no errors']);
+        echo json_encode(['status' => 'success', 'message' => \_AM_WGTESTUI_TEST_URL_EXISTS]);
     } else {
-        header('Content-Type: application/json');
-        echo json_encode(['status' => 'error', 'message' => $testsObj->getErrors()]);
+        $arrTemp = explode('/', $currentUrl);
+        $testModule = \count($arrTemp) > 0 ? $arrTemp[1] : 'xoopscore';
+        $testsObj->setVar('test_url', $currentUrl);
+        $testsObj->setVar('test_area', 2);
+        $testsObj->setVar('test_module', $testModule);
+        $testsObj->setVar('test_type', 1);
+        $testsObj->setVar('test_resultcode', '0');
+        $testsObj->setVar('test_resulttext', '');
+        $testsObj->setVar('test_infotext', '');
+        //$testsObj->setVar('test_datetest', \time());
+        $testsObj->setVar('test_datecreated', \time());
+        $testsObj->setVar('test_submitter', $GLOBALS['xoopsUser']->uid());
+        // Insert Data
+        if ($testsHandler->insert($testsObj)) {
+            // redirect after insert
+            header('Content-Type: application/json');
+            echo json_encode(['status' => 'success', 'message' => \_AM_WGTESTUI_TEST_URL_ADDED]);
+        } else {
+            header('Content-Type: application/json');
+            echo json_encode(['status' => 'error', 'message' => \_AM_WGTESTUI_TEST_URL_ERROR . '<br>' . $testsObj->getErrors()]);
+        }
     }
 }
