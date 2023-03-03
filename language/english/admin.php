@@ -68,6 +68,8 @@ require_once __DIR__ . '/common.php';
 \define('_AM_WGTESTUI_TEST_DATECREATED', 'Datecreated');
 \define('_AM_WGTESTUI_TEST_SUBMITTER', 'Submitter');
 // General
+\define('_AM_WGTESTUI_TEST_DETAILS', "Show test details");
+\define('_AM_WGTESTUI_TEST_RESULTS', "Details result check of:");
 \define('_AM_WGTESTUI_FORM_UPLOAD', 'Upload file');
 \define('_AM_WGTESTUI_FORM_UPLOAD_NEW', 'Upload new file: ');
 \define('_AM_WGTESTUI_FORM_UPLOAD_SIZE', 'Max file size: ');
