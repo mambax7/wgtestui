@@ -1,0 +1,43 @@
+wgtestui_tests:
+    options: 'ENGINE=InnoDB'
+    columns: 
+        -
+            name: test_id
+            attributes: ' INT(8) UNSIGNED NOT NULL AUTO_INCREMENT '
+        -
+            name: test_url
+            attributes: ' VARCHAR(500) NOT NULL DEFAULT '''''''' '
+        -
+            name: test_module
+            attributes: ' VARCHAR(255) NOT NULL DEFAULT '''''''' '
+        -
+            name: test_area
+            attributes: ' INT(10) NOT NULL DEFAULT ''0'' '
+        -
+            name: test_type
+            attributes: ' INT(10) NOT NULL DEFAULT ''0'' '
+        -
+            name: test_resultcode
+            attributes: ' VARCHAR(255) NOT NULL DEFAULT '''''''' '
+        -
+            name: test_resulttext
+            attributes: ' VARCHAR(255) NOT NULL DEFAULT '''''''' '
+        -
+            name: test_infotext
+            attributes: ' TEXT NOT NULL  '
+        -
+            name: test_datetest
+            attributes: ' INT(11) NOT NULL DEFAULT ''0'' '
+        -
+            name: test_datecreated
+            attributes: ' INT(11) NOT NULL DEFAULT ''0'' '
+        -
+            name: test_submitter
+            attributes: ' INT(10) NOT NULL DEFAULT ''0'' '
+    keys:
+        PRIMARY:
+            columns: test_id
+            unique: true
+        idxurl:
+            columns: test_url
+            unique: true
