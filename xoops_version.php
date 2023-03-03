@@ -29,7 +29,7 @@ $moduleDirNameUpper = \mb_strtoupper($moduleDirName);
 // ------------------- Informations ------------------- //
 $modversion = [
     'name'                => \_MI_WGTESTUI_NAME,
-    'version'             => '1.0.0',
+    'version'             => '1.0.1',
     'module_status'       => 'Beta 1',
     'release'             => '2023-03-01', // format: yyyy-mm-dd
     'release_date'        => '2023/03/01', // format: yyyy/mm/dd
@@ -65,7 +65,7 @@ $modversion = [
     'module_website_name' => 'XOOPS Project',
     'system_menu'         => 1,
     'hasAdmin'            => 1,
-    'hasMain'             => 1,
+    'hasMain'             => 0,
     'adminindex'          => 'admin/index.php',
     'adminmenu'           => 'admin/menu.php',
     'onInstall'           => 'include/install.php',
@@ -83,6 +83,7 @@ $modversion['templates'] = [
     ['file' => 'wgtestui_admin_footer.tpl', 'description' => '', 'type' => 'admin'],
     ['file' => 'wgtestui_admin_examples.tpl', 'description' => '', 'type' => 'admin'],
     ['file' => 'wgtestui_admin_examples_err.tpl', 'description' => '', 'type' => 'admin'],
+    ['file' => 'wgtestui_admin_plugins.tpl', 'description' => '', 'type' => 'admin'],
     // User templates
     ['file' => 'wgtestui_header.tpl', 'description' => ''],
     ['file' => 'wgtestui_index.tpl', 'description' => ''],

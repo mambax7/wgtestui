@@ -99,7 +99,6 @@ class Tests extends \XoopsObject
         if (!$action) {
             $action = $_SERVER['REQUEST_URI'];
         }
-        $isAdmin = \is_object($GLOBALS['xoopsUser']) ? $GLOBALS['xoopsUser']->isAdmin($GLOBALS['xoopsModule']->mid()) : false;
         // Title
         $title = $this->isNew() ? \_AM_WGTESTUI_TEST_ADD : \_AM_WGTESTUI_TEST_EDIT;
         // Get Theme Form

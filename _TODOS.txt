@@ -1,1 +1,1 @@
-create/import plugins for different modules
+remove prefix from table field names

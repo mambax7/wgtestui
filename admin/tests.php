@@ -139,7 +139,7 @@ switch ($op) {
         $testsObj->setVar('test_submitter', Request::getInt('test_submitter'));
         // Insert Data
         if ($testsHandler->insert($testsObj)) {
-                \redirect_header('tests.php?op=list&amp;start=' . $start . '&amp;limit=' . $limit, 2, \_AM_WGTESTUI_FORM_OK);
+            \redirect_header('tests.php?op=list&amp;start=' . $start . '&amp;limit=' . $limit, 2, \_AM_WGTESTUI_FORM_OK);
         }
         // Get Form
         $GLOBALS['xoopsTpl']->assign('error', $testsObj->getHtmlErrors());

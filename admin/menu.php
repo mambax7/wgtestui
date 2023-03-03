@@ -40,6 +40,11 @@ $adminmenu[] = [
     'icon' => 'assets/icons/32/search.png',
 ];
 $adminmenu[] = [
+    'title' => \_MI_WGTESTUI_ADMENU5,
+    'link' => 'admin/plugins.php',
+    'icon' => 'assets/icons/32/plugins.png',
+];
+$adminmenu[] = [
     'title' => \_MI_WGTESTUI_ADMENU3,
     'link' => 'admin/clone.php',
     'icon' => $sysPathIcon32.'/page_copy.png',

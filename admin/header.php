@@ -35,6 +35,7 @@ $modPathIcon32   = \WGTESTUI_URL . '/' . $GLOBALS['xoopsModule']->getInfo('modic
 // Get instance of module
 $helper = \XoopsModules\Wgtestui\Helper::getInstance();
 $testsHandler = $helper->getHandler('Tests');
+$pluginsHandler = $helper->getHandler('Plugins');
 $myts = MyTextSanitizer::getInstance();
 // 
 if (!isset($xoopsTpl) || !\is_object($xoopsTpl)) {
