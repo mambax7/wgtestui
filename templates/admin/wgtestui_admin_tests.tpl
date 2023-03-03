@@ -28,7 +28,17 @@
                 <td class='center'><{$test.area}></td>
                 <td class='center'><{$test.type}></td>
                 <td class='center'><{$test.resultcode}> <{$test.resulttext}></td>
-                <td class='center'><{$test.infotext_short}></td>
+                <td class='center'>
+                    <{if $test.infotext|default:'' != ''}>
+                    <img class="tooltip wgt-tooltip-img" onclick="display_dialog('<{$test.id}>', true, true, 'slide', 'slide', 300, '80%');"
+                         src="<{xoAdminIcons 'display.png'}>" alt="<{$smarty.const._AM_WGTESTUI_TEST_DETAILS}>" title="<{$smarty.const._AM_WGTESTUI_TEST_DETAILS}>">
+                    <div id="dialog<{$test.id}>" title="<{$smarty.const._AM_WGTESTUI_TEST_DETAILS}>" style='display:none;'>
+                        <p class="wgt-tooltip-header"><{$smarty.const._AM_WGTESTUI_TEST_RESULTS}> <{$test.url}></p>
+                        <p><{$test.infotext}></p>
+                    </div>
+                    <{/if}>
+                    <{$test.infotext_short}>
+                </td>
                 <td class='center'><{$test.datetest}></td>
                 <td class='center'><{$test.datecreated}></td>
                 <td class='center'><{$test.submitter}></td>

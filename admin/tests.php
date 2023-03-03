@@ -42,6 +42,13 @@ switch ($op) {
     default:
         // Define Stylesheet
         $GLOBALS['xoTheme']->addStylesheet($style, null);
+        // css and js for showing dialog
+        $GLOBALS['xoTheme']->addStylesheet(XOOPS_URL . '/modules/system/css/admin.css');
+        $GLOBALS['xoTheme']->addStylesheet(XOOPS_URL . '/modules/system/css/ui/' . xoops_getModuleOption('jquery_theme', 'system') . '/ui.all.css');
+        $GLOBALS['xoTheme']->addScript('browse.php?Frameworks/jquery/jquery.js');
+        $GLOBALS['xoTheme']->addScript('browse.php?Frameworks/jquery/plugins/jquery.ui.js');
+        $GLOBALS['xoTheme']->addScript(\XOOPS_URL . '/modules/system/js/admin.js');
+        // end: css and js for showing dialog
         $templateMain = 'wgtestui_admin_tests.tpl';
         $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('tests.php'));
         $adminObject->addItemButton(\_AM_WGTESTUI_ADD_TEST, 'tests.php?op=new');
