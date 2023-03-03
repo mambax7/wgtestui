@@ -45,7 +45,7 @@ if (!is_object($testsObj)) {
 } else {
     $currentUrl = str_replace(XOOPS_URL . '/', '', $url);
     $arrTemp = explode('/', $currentUrl);
-    $testModule = $arrTemp[1];
+    $testModule = \count($arrTemp) > 0 ? $arrTemp[1] : 'xoopscore';
     $testsObj->setVar('test_url', $currentUrl);
     $testsObj->setVar('test_area', 2);
     $testsObj->setVar('test_module', $testModule);
